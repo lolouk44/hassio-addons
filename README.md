@@ -10,89 +10,52 @@ Name | Model | Picture
 [Mi Body Composition Scale 2](https://c.mi.com/thread-2289389-1-0.html) | XMTZC05HM | ![Mi Body Composition Scale 2](https://github.com/lolouk44/xiaomi_mi_scale/blob/master/Screenshots/Mi_Body_Composition_Scale_2_Thumb.png)
 
 
-## Getting the Mac Address of your Scale:
+## Setup & Configuration
 
-1. Retrieve the scale's MAC Address using this command:
+1. Retrieve the scale's MAC Address based on the Xiaomi Mi Fit app.
+
+2. Download the addon
+ 
+3. Create a new directory xiaomi_mi_scale in the folder addons in your hass.io installation and place all files in it (via SSH)
+![Add-On](Screenshots/addon.png)
+
+4. Adjust the Dockerfile according to your needs
 ```
-$ sudo hcitool lescan
+# adjust here the environment variables
+ENV HCI_DEV hci0
+ENV MISCALE_MAC 00:00:00:00:00:00
+ENV MQTT_PREFIX miScale
+ENV MQTT_HOST 192.168.0.1
+ENV MQTT_USERNAME username
+ENV MQTT_PASSWORD password
+ENV MQTT_PORT 1883
+ENV TIME_INTERVAL 30
 
-LE Scan ...
-C4:D3:8C:12:4C:57 MIBCS
-[...]
-```
-1. Note down the MAC address of your scale, we will need to use this as part of your configuration... Depending on your scale it could be one of
-	1. `MI SCALE2`
-	1. `MIBCS`
-	1. `MIBFS`
+ENV USER1_GT 70
+ENV USER1_SEX male
+ENV USER1_NAME Jo
+ENV USER1_HEIGHT 175
+ENV USER1_DOB 1990-01-01
 
-## Setup & Configuration:
-### Running script with Docker:
+ENV USER2_LT 35
+ENV USER2_SEX female
+ENV USER2_NAME Serena
+ENV USER2_HEIGHT 95
+ENV USER2_DOB 1990-01-01
 
-1. Supported platforms:
-	1. linux/amd64
-	1. linux/arm32v6
-	1. linux/arm32v7
-	1. linux/arm64v8
-1. Open `docker-compose.yml` (see below) and edit the environment to suit your configuration...
-1. Stand up the container - `docker-compose up -d`
-
-### docker-compose:
-```yaml
-version: '3'
-services:
-
-  mi-scale:
-    image: lolouk44/xiaomi-mi-scale:latest
-    container_name: mi-scale
-    restart: always
-
-    network_mode: host
-    privileged: true
-
-    environment:
-    - HCI_DEV=hci0                  # Bluetooth hci device to use. Defaults to hci0
-    - MISCALE_MAC=00:00:00:00:00:00 # Mac address of your scale
-    - MQTT_HOST=127.0.0.1           # MQTT Server (defaults to 127.0.0.1)
-    - MQTT_PREFIX=miScale           # MQTT Topic Prefix. Defaults to miscale
-    - MQTT_USERNAME=                # Username for MQTT server (comment out if not required)
-    - MQTT_PASSWORD=                # Password for MQTT (comment out if not required)
-    - MQTT_PORT=                    # Defaults to 1883
-    - TIME_INTERVAL=30              # Time in sec between each query to the scale, to allow other applications to use the Bluetooth module. Defaults to 30
-
-      # Auto-gender selection/config -- This is used to create the calculations such as BMI, Water/Bone Mass etc...
-      # Up to 3 users possible as long as weights do not overlap!
-
-    - USER1_GT=70                   # If the weight is greater than this number, we'll assume that we're weighing User #1
-    - USER1_SEX=male                # male / female
-    - USER1_NAME=Jo                 # Name of the user
-    - USER1_HEIGHT=175              # Height (in cm) of the user
-    - USER1_DOB=1990-01-01          # DOB (in yyyy-mm-dd format)
-
-    - USER2_LT=35                   # If the weight is less than this number, we'll assume that we're weighing User #2
-    - USER2_SEX=female              # male / female
-    - USER2_NAME=Serena             # Name of the user
-    - USER2_HEIGHT=95               # Height (in cm) of the user
-    - USER2_DOB=1990-01-01          # DOB (in yyyy-mm-dd format)
-
-    - USER3_SEX=female              # male / female
-    - USER3_NAME=Missy              # Name of the user
-    - USER3_HEIGHT=150              # Height (in cm) of the user
-    - USER3_DOB=1990-01-01          # DOB (in yyyy-mm-dd format)
+ENV USER3_SEX female
+ENV USER3_NAME Missy
+ENV USER3_HEIGHT 150
+ENV USER3_DOB 1990-01-01
 ```
 
+5. Open Home Assistant and navigate to add-on store and clock the reload button on the top right corner. Now you should see the Xiaomi Mi Scale as a local add-on
+![Add-On Store](Screenshots/addon_store.png)
 
-### Running script directly on your host system (if your platform is not listed/supported):
+6. Install the add-on (takes a while as the container is built locally)
 
-**Note: Python 3.6 or higher is required to run the script manually**
-1. Install python requirements (pip3 install -r requirements.txt)
-1. Open `wrapper.sh` and configure your environment variables to suit your setup.
-1. Add a cron-tab entry to wrapper like so:
+7. Start the add-on
 
-```sh
-@reboot bash /path/to/wrapper.sh
-```
-
-**NOTE**: Although once started the script runs continuously, it may take a few seconds for the data to be retrieved, computed and sent via mqtt.
 
 ## Home-Assistant Setup:
 Under the `sensor` block, enter as many blocks as users configured in your environment variables:
