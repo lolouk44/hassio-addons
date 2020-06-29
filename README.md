@@ -14,9 +14,10 @@ Name | Model | Picture
 
 1. Retrieve the scale's MAC Address based on the Xiaomi Mi Fit app.
 
-2. Download the addon
- 
-3. Create a new directory xiaomi_mi_scale in the folder addons in your hass.io installation and place all files in it (via SSH)
+2. Clone this repository
+`git clone https://github.com/lolouk44/xiaomi_mi_scale_ha_add_on`
+
+3. Create a new directory xiaomi_mi_scale in the folder addons in your Home Assistant installation and place all files in it via SSH
 
 ![Add-On](Screenshots/addon.png)
 
