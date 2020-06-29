@@ -17,6 +17,7 @@ Name | Model | Picture
 2. Download the addon
  
 3. Create a new directory xiaomi_mi_scale in the folder addons in your hass.io installation and place all files in it (via SSH)
+
 ![Add-On](Screenshots/addon.png)
 
 4. Adjust the Dockerfile according to your needs
