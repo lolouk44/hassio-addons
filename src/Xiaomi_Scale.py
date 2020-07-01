@@ -29,20 +29,15 @@ try:
         sys.stdout.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Loading Config From Add-On Options...\n")
         data = json.load(json_file)
         MISCALE_MAC = data["MISCALE_MAC"]
-        if(data["MQTT_USERNAME"] == ""):
-            MQTT_USERNAME = None
-        else:
-            MQTT_USERNAME = data["MQTT_USERNAME"]
-        if(data["MQTT_PASSWORD"] == ""):
-            MQTT_PASSWORD = None
-        else:
-            MQTT_PASSWORD = data["MQTT_PASSWORD"]
+        MQTT_USERNAME = None if(data["MQTT_USERNAME"] == "") else data["MQTT_USERNAME"]
+        MQTT_PASSWORD = None if(data["MQTT_PASSWORD"] == "") else data["MQTT_PASSWORD"]
         MQTT_HOST = data["MQTT_HOST"]
         MQTT_PORT = int(data["MQTT_PORT"])
         MQTT_PREFIX = data["MQTT_PREFIX"]
         TIME_INTERVAL = int(data["TIME_INTERVAL"])
+        MQTT_DISCOVERY = data["MQTT_DISCOVERY"]
+        MQTT_DISCOVERY_PREFIX = data["MQTT_DISCOVERY_PREFIX"]
         HCI_DEV = data["HCI_DEV"][-1]
-        OLD_MEASURE = ''
 
         # User Variables...
         USER1_GT = int(data["USER1_GT"])
@@ -74,8 +69,9 @@ except FileNotFoundError:
     MQTT_PORT = int(os.getenv('MQTT_PORT', 1883))
     MQTT_PREFIX = os.getenv('MQTT_PREFIX', 'miscale')
     TIME_INTERVAL = int(os.getenv('TIME_INTERVAL', 30))
+    MQTT_DISCOVERY = os.getenv('MQTT_DISCOVERY',True)
+    MQTT_DISCOVERY_PREFIX = os.getenv('MQTT_DISCOVERY_PREFIX','homeassistant')
     HCI_DEV = os.getenv('HCI_DEV', 'hci0')[-1]
-    OLD_MEASURE = ''
 
     # User Variables...
     USER1_GT = int(os.getenv('USER1_GT', '70')) # If the weight is greater than this number, we'll assume that we're weighing User #1
@@ -95,6 +91,22 @@ except FileNotFoundError:
     USER3_HEIGHT = int(os.getenv('USER3_HEIGHT', '175')) # Height (in cm) of the user
     USER3_DOB = os.getenv('USER3_DOB', '1988-01-01') # DOB (in yyyy-mm-dd format)
     sys.stdout.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Config Loaded...\n")
+
+OLD_MEASURE = ''
+
+def discovery():
+    for MQTTUser in (USER1_NAME,USER2_NAME,USER3_NAME):
+        message = '{"name": "' + MQTTUser + ' Weight",'
+        message+= '"state_topic": "miScale/' + MQTTUser + '/weight","value_template": "{{ value_json.Weight }}","unit_of_measurement": "kg",'
+        message+= '"json_attributes_topic": "miScale/' + MQTTUser + '/weight","icon": "mdi:scale-bathroom"}'
+        publish.single(
+                        MQTT_DISCOVERY_PREFIX + '/sensor/' + MQTT_PREFIX + '/' + MQTTUser + '/config',
+                        message,
+                        retain=False,
+                        hostname=MQTT_HOST,
+                        port=MQTT_PORT,
+                        auth={'username':MQTT_USERNAME, 'password':MQTT_PASSWORD}
+                    )
 
 
 class ScanProcessor():
@@ -197,6 +209,8 @@ class ScanProcessor():
             raise
 
 def main():
+    if MQTT_DISCOVERY:
+        discovery()
     BluetoothFailCounter = 0
     while True:
         try:
