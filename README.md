@@ -39,6 +39,8 @@ MQTT_USERNAME | string | No | Username for MQTT server (comment out if not requi
 MQTT_PASSWORD | string | No | Password for MQTT (comment out if not required)
 MQTT_PORT | int | No | Defaults to 1883
 TIME_INTERVAL | int | No | Time in sec between each query to the scale, to allow other applications to use the Bluetooth module. Defaults to 30
+MQTT_DISCOVERY | bool | No | MQTT Discovery for Home Assistant Defaults to true
+MQTT_DISCOVERY_PREFIX | string | No | MQTT Discovery Prefix for Home Assistant. Defaults to homeassistant
 
 
 Auto-gender selection/config -- This is used to create the calculations such as BMI, Water/Bone Mass etc...
