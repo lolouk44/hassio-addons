@@ -107,6 +107,7 @@ def discovery():
                         port=MQTT_PORT,
                         auth={'username':MQTT_USERNAME, 'password':MQTT_PASSWORD}
                     )
+    sys.stdout.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Discovery Completed...\n")
 
 
 class ScanProcessor():
