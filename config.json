@@ -60,15 +60,15 @@
     "USER1_HEIGHT": "int",
     "USER1_DOB": "str",
 
-    "USER2_LT": "int",
-    "USER2_SEX": "str",
-    "USER2_NAME": "str",
-    "USER2_HEIGHT": "int",
-    "USER2_DOB": "str",
+    "USER2_LT": "int?",
+    "USER2_SEX": "str?",
+    "USER2_NAME": "str?",
+    "USER2_HEIGHT": "int?",
+    "USER2_DOB": "str?",
 
-    "USER3_SEX": "str",
-    "USER3_NAME": "str",
-    "USER3_HEIGHT": "int",
-    "USER3_DOB": "str"
+    "USER3_SEX": "str?",
+    "USER3_NAME": "str?",
+    "USER3_HEIGHT": "int?",
+    "USER3_DOB": "str?"
   }
 }
