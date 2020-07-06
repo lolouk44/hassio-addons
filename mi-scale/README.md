@@ -14,7 +14,7 @@ Name | Model | Picture
 
 1. Retrieve the scale's MAC Address from the Xiaomi Mi Fit App:
 
-![MAC Address](Screenshots/MAC_Address.png)
+![MAC Address](https://github.com/lolouk44/xiaomi_mi_scale/blob/master/Screenshots/MAC_Address.png)
 
 2. Open Home Assistant and navigate to add-on store. Click on the 3 dots (top right) and select Repositories
 3. Enter `https://github.com/lolouk44/hassio-addons` in the box and click on Add
