@@ -7,6 +7,9 @@ assignees: ''
 
 ---
 
+**Select Add-On**
+- [ ] Xiaomi Mi Scale
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
