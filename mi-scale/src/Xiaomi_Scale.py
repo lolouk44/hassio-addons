@@ -56,7 +56,7 @@ try:
         try:
             MQTT_PREFIX = data["MQTT_PREFIX"]
         except:
-            MQTT_PREFIX = "miScale"
+            MQTT_PREFIX = "miscale"
             pass
         try:
             TIME_INTERVAL = int(data["TIME_INTERVAL"])
@@ -189,8 +189,8 @@ OLD_MEASURE = ''
 def discovery():
     for MQTTUser in (USER1_NAME,USER2_NAME,USER3_NAME):
         message = '{"name": "' + MQTTUser + ' Weight",'
-        message+= '"state_topic": "miScale/' + MQTTUser + '/weight","value_template": "{{ value_json.Weight }}","unit_of_measurement": "kg",'
-        message+= '"json_attributes_topic": "miScale/' + MQTTUser + '/weight","icon": "mdi:scale-bathroom"}'
+        message+= '"state_topic": "miscale/' + MQTTUser + '/weight","value_template": "{{ value_json.Weight }}","unit_of_measurement": "kg",'
+        message+= '"json_attributes_topic": "miscale/' + MQTTUser + '/weight","icon": "mdi:scale-bathroom"}'
         publish.single(
                         MQTT_DISCOVERY_PREFIX + '/sensor/' + MQTT_PREFIX + '/' + MQTTUser + '/config',
                         message,
