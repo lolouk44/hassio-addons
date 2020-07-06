@@ -36,7 +36,7 @@ try:
         try:
             MQTT_USERNAME = data["MQTT_USERNAME"]
         except:
-            MQTT_USERNAME = None
+            MQTT_USERNAME = "username"
             pass
         try:
             MQTT_PASSWORD = data["MQTT_PASSWORD"]
