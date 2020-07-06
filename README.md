@@ -12,7 +12,8 @@ Name | Model | Picture
 
 ## Setup
 
-1. Retrieve the scale's MAC Address based on the Xiaomi Mi Fit app.
+1. Retrieve the scale's MAC Address from the Xiaomi Mi Fit App:
+![MAC Address](Screenshots/MAC_Address.png)
 
 2. Clone this repository
 `git clone https://github.com/lolouk44/xiaomi_mi_scale_ha_add_on`
