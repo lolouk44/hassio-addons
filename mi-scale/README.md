@@ -16,17 +16,17 @@ Name | Model | Picture
 
 ![MAC Address](Screenshots/MAC_Address.png)
 
-2. Clone this repository
-`git clone https://github.com/lolouk44/xiaomi_mi_scale_ha_add_on`
+2. Open Home Assistant and navigate to add-on store. Click on the 3 dots and select Repositories:
+![Add-On Store](Screenshots/Repos.png)
 
-3. Create a new directory xiaomi_mi_scale in the folder addons in your Home Assistant installation and place all files in it via SSH / Samba
+3. Enter `https://github.com/lolouk44/hassio-addons` in the box and click on Add:
+![Add-On Store](Screenshots/Repos1.png)
 
-![Add-On](Screenshots/addon.png)
+4. You should now see Lolouk44 Add-Ons at the bottom list:
 
-4. Open Home Assistant and navigate to add-on store and clock the reload button on the top right corner. Now you should see the Xiaomi Mi Scale as a local add-on
-![Add-On Store](Screenshots/addon_store.png)
+![Add-On](Screenshots/Repos2.png)
 
-5. Install the add-on (takes a while as the container is built locally)
+5. Click on Xiaomi Mi Scale then click on Install
 
 6. Edit the Configuration
 
