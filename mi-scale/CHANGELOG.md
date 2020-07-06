@@ -1,3 +1,10 @@
+## [0.1.7] - 2020-07-06
+### Added
+- repository.json to make it a real add-on repo (fixes https://github.com/lolouk44/hassio-addons/issues/4)
+### Modified
+- Now truly handles optional config entries(fixes https://github.com/lolouk44/hassio-addons/issues/3)
+- MQTT Discovery set wtih retain flag (fixes https://github.com/lolouk44/hassio-addons/issues/2)
+- README updated to use Xiaomi Mi Fit App to retrieve the MAC Address (fixes https://github.com/lolouk44/xiaomi_mi_scale/pull/25)
 ## [0.1.6] - 2020-07-01
 ### Added
 - Docker Image so install is quicker (no local build required).
