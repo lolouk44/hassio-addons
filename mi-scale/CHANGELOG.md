@@ -1,3 +1,6 @@
+## [0.1.8] - 
+### Fixed
+- Default MQTT Prefix in config.json typo(fixes https://github.com/lolouk44/hassio-addons/issues/6)
 ## [0.1.7] - 2020-07-06
 ### Added
 - repository.json to make it a real add-on repo (fixes https://github.com/lolouk44/hassio-addons/issues/4)
