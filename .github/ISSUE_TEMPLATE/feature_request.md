@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Select Add-On**
+**Select Add-On (place a lowercase `x` for the relevant add-on)**
 - [ ] Xiaomi Mi Scale
 
 **Is your feature request related to a problem? Please describe.**
