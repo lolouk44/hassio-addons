@@ -15,7 +15,7 @@
   "options": {
     "HCI_DEV": "hci0",
     "MISCALE_MAC": "00:00:00:00:00:00",
-    "MQTT_PREFIX": "miScale",
+    "MQTT_PREFIX": "miscale",
     "MQTT_HOST": "192.168.0.1",
     "MQTT_USERNAME": "user",
     "MQTT_PASSWORD": "passwd",
