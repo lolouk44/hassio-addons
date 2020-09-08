@@ -1,3 +1,20 @@
+## [0.1.8] - 2020-09-08
+### Breaking Changes
+- Attributes are now snake_case (fixes https://github.com/lolouk44/xiaomi_mi_scale/issues/24)
+
+### Changed
+- Fixed default MQTT Prefix in config.json typo (fixes https://github.com/lolouk44/hassio-addons/issues/6)
+- Fixed MQTT Discovery value check to discover
+- Changed timestamp to default python format
+- Changes the bluetooth reset from reset to down-wait-up (fixes https://github.com/lolouk44/hassio-addons/issues/13)
+- Fixed hard coded hci0 to provided hci interface when performing a reset
+- Fixed weight in Lbs not detected on Scale V1 (XMTZCO1HM) (fixes https://github.com/lolouk44/xiaomi_mi_scale/issues/28)
+- Fixed body calculations for non kg weights
+- Updated README
+
+### Added
+- Added unit to attributes
+
 ## [0.1.7] - 2020-07-06
 ### Added
 - repository.json to make it a real add-on repo (fixes https://github.com/lolouk44/hassio-addons/issues/4)

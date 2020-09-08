@@ -40,14 +40,21 @@ MQTT_DISCOVERY_PREFIX | string | No | MQTT Discovery Prefix for Home Assistant. 
 Auto-gender selection/config -- This is used to create the calculations such as BMI, Water/Bone Mass etc...
 Up to 3 users possible as long as weights do not overlap!
 
+Here is the logic used to assign a measured weight to a user:
+```
+if [measured value in kg] is greater than USER1_GT, assign it to USER1
+else if [measured value in kg] is less than USER2_LT, assign it to USER2
+else assign it to USER3 (e.g. USER2_LT < [measured value in kg] < USER1_GT)
+```
+
 Option | Type | Required | Description
 --- | --- | --- | ---
-USER1_GT | int | Yes | If the weight is greater than this number, we'll assume that we're weighing User #1
+USER1_GT | int | Yes | If the weight (in kg) is greater than this number, we'll assume that we're weighing User #1
 USER1_SEX | string | Yes | male / female
 USER1_NAME | string | Yes | Name of the user
 USER1_HEIGHT | int | Yes | Height (in cm) of the user
 USER1_DOB | string | Yes | DOB (in yyyy-mm-dd format)
-USER2_LT | int | No | If the weight is less than this number, we'll assume that we're weighing User #2. Defaults to USER1_GT Value
+USER2_LT | int | No | If the weight (in kg) is less than this number, we'll assume that we're weighing User #2. Defaults to USER1_GT Value
 USER2_SEX | string | No | male / female. Defaults to female
 USER2_NAME | string | No | Name of the user. Defaults to Serena
 USER2_HEIGHT | int | No |Height (in cm) of the user. Defaults to 95
@@ -67,17 +74,18 @@ Under the `sensor` block, enter as many blocks as users configured in your envir
 ```yaml
   - platform: mqtt
     name: "Example Name Weight"
-    state_topic: "miScale/USER_NAME/weight"
+    state_topic: "miscale/USER_NAME/weight"
     value_template: "{{ value_json['Weight'] }}"
     unit_of_measurement: "kg"
-    json_attributes_topic: "miScale/USER_NAME/weight"
+    json_attributes_topic: "miscale/USER_NAME/weight"
     icon: mdi:scale-bathroom
 
   - platform: mqtt
     name: "Example Name BMI"
-    state_topic: "miScale/USER_NAME/weight"
+    state_topic: "miscale/USER_NAME/weight"
     value_template: "{{ value_json['BMI'] }}"
     icon: mdi:human-pregnant
+    unit_of_measurement: "kg/m2"
 
 ```
 
