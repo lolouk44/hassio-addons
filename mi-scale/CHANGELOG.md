@@ -1,3 +1,7 @@
+## [0.1.9] - 2020-09-08
+### Changed
+- Fixed typo in MQTT message following the **breaking change** to snake_case attributes in 0.1.8
+
 ## [0.1.8] - 2020-09-08
 ### Breaking Changes
 - Attributes are now snake_case (fixes https://github.com/lolouk44/xiaomi_mi_scale/issues/24)
