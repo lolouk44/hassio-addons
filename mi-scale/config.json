@@ -1,6 +1,6 @@
 {
   "name": "Xiaomi Mi Scale",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "slug": "xiaomi_mi_scale",
   "description": "Read weight measurements from Xiamomi scale via BLE",
   "url": "https://github.com/lolouk44/xiaomi_mi_scale_ha_add_on",
@@ -16,7 +16,7 @@
     "HCI_DEV": "hci0",
     "MISCALE_MAC": "00:00:00:00:00:00",
     "MQTT_PREFIX": "miscale",
-    "MQTT_HOST": "192.168.0.1",
+    "MQTT_HOST": "192.168.86.138",
     "MQTT_USERNAME": "user",
     "MQTT_PASSWORD": "passwd",
     "MQTT_PORT": 1883,
@@ -24,22 +24,27 @@
     "MQTT_DISCOVERY": true,
     "MQTT_DISCOVERY_PREFIX": "homeassistant",
 
-    "USER1_GT": 70,
-    "USER1_SEX": "male",
-    "USER1_NAME": "Jo",
-    "USER1_HEIGHT": 175,
-    "USER1_DOB": "1990-01-01",
+    "USERS": [
+      { "GT": 60,
+        "LT": 80,
+        "SEX": "male",
+        "NAME": "Bob",
+        "HEIGHT": 180,
+        "DOB": "1990-01-01"},
+      { "GT": 40,
+        "LT": 60,
+        "SEX": "female",
+        "NAME": "Mary",
+        "HEIGHT": 160,
+        "DOB": "1990-01-01"},
+      { "GT": 20,
+        "LT": 40,
+        "SEX": "male",
+        "NAME": "Timmy",
+        "HEIGHT": 120,
+        "DOB": "1990-01-01"}
+  ]
 
-    "USER2_LT": 35,
-    "USER2_SEX": "female",
-    "USER2_NAME": "Serena",
-    "USER2_HEIGHT": 95,
-    "USER2_DOB": "1990-01-01",
-
-    "USER3_SEX": "female",
-    "USER3_NAME": "Missy",
-    "USER3_HEIGHT": 150,
-    "USER3_DOB": "1990-01-01"
 
   },
   "schema": {
@@ -54,21 +59,40 @@
     "MQTT_DISCOVERY": "bool?",
     "MQTT_DISCOVERY_PREFIX": "str?",
 
+    "USERS": [
+      { "GT": "int",
+        "LT": "int?",
+        "SEX": "str",
+        "NAME": "str",
+        "HEIGHT": "int",
+        "DOB": "str"}
+  ],
     "USER1_GT": "int",
+    "USER1_LT": "int?",
     "USER1_SEX": "str",
     "USER1_NAME": "str",
     "USER1_HEIGHT": "int",
     "USER1_DOB": "str",
 
+    "USER2_GT": "int",
     "USER2_LT": "int?",
     "USER2_SEX": "str?",
     "USER2_NAME": "str?",
     "USER2_HEIGHT": "int?",
     "USER2_DOB": "str?",
 
+    "USER3_GT": "int",
+    "USER3_LT": "int?",
     "USER3_SEX": "str?",
     "USER3_NAME": "str?",
     "USER3_HEIGHT": "int?",
-    "USER3_DOB": "str?"
+    "USER3_DOB": "str?",
+
+    "USER4_GT": "int",
+    "USER4_LT": "int?",
+    "USER4_SEX": "str?",
+    "USER4_NAME": "str?",
+    "USER4_HEIGHT": "int?",
+    "USER4_DOB": "str?"
   }
 }
