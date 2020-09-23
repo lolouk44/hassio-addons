@@ -80,33 +80,6 @@
         "NAME": "str",
         "HEIGHT": "int",
         "DOB": "str"}
-  ],
-    "USER1_GT": "int",
-    "USER1_LT": "int?",
-    "USER1_SEX": "str",
-    "USER1_NAME": "str",
-    "USER1_HEIGHT": "int",
-    "USER1_DOB": "str",
-
-    "USER2_GT": "int",
-    "USER2_LT": "int?",
-    "USER2_SEX": "str?",
-    "USER2_NAME": "str?",
-    "USER2_HEIGHT": "int?",
-    "USER2_DOB": "str?",
-
-    "USER3_GT": "int",
-    "USER3_LT": "int?",
-    "USER3_SEX": "str?",
-    "USER3_NAME": "str?",
-    "USER3_HEIGHT": "int?",
-    "USER3_DOB": "str?",
-
-    "USER4_GT": "int",
-    "USER4_LT": "int?",
-    "USER4_SEX": "str?",
-    "USER4_NAME": "str?",
-    "USER4_HEIGHT": "int?",
-    "USER4_DOB": "str?"
+  ] 
   }
 }
