@@ -16,7 +16,7 @@
     "HCI_DEV": "hci0",
     "MISCALE_MAC": "00:00:00:00:00:00",
     "MQTT_PREFIX": "miscale",
-    "MQTT_HOST": "192.168.86.138",
+    "MQTT_HOST": "192.168.0.1",
     "MQTT_USERNAME": "user",
     "MQTT_PASSWORD": "passwd",
     "MQTT_PORT": 1883,
@@ -25,24 +25,38 @@
     "MQTT_DISCOVERY_PREFIX": "homeassistant",
 
     "USERS": [
-      { "GT": 60,
+      { 
+        "GT": 60,
         "LT": 80,
         "SEX": "male",
         "NAME": "Bob",
         "HEIGHT": 180,
-        "DOB": "1990-01-01"},
-      { "GT": 40,
+        "DOB": "1990-01-01"
+      },
+      { 
+        "GT": 40,
         "LT": 60,
         "SEX": "female",
         "NAME": "Mary",
         "HEIGHT": 160,
-        "DOB": "1990-01-01"},
-      { "GT": 20,
+        "DOB": "1990-01-01"
+      },
+      { 
+        "GT": 20,
         "LT": 40,
         "SEX": "male",
         "NAME": "Timmy",
         "HEIGHT": 120,
-        "DOB": "1990-01-01"}
+        "DOB": "1990-01-01"
+      },
+      { 
+        "GT": 1,
+        "LT": 20,
+        "SEX": "female",
+        "NAME": "Baby",
+        "HEIGHT": 50,
+        "DOB": "1990-01-01"
+      }
   ]
 
 
