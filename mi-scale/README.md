@@ -44,6 +44,7 @@ MQTT_PORT | int | No | Defaults to 1883
 TIME_INTERVAL | int | No | Time in sec between each query to the scale, to allow other applications to use the Bluetooth module. Defaults to 30
 MQTT_DISCOVERY | bool | No | MQTT Discovery for Home Assistant Defaults to true
 MQTT_DISCOVERY_PREFIX | string | No | MQTT Discovery Prefix for Home Assistant. Defaults to homeassistant
+USERS | List | Yes | List of users to add
 
 Auto-gender selection/config -- This is used to create the calculations such as BMI, Water/Bone Mass etc...
 
@@ -53,8 +54,8 @@ if [measured value in kg] is within the range of a user's defined values for GT 
 If the weight matches two separate user's ranges, it will just be assigned to the first user that matched (so don't overlap ranges!)
 ```
 
-USERS - <List>
-Option | Type | Required | Description
+
+User Option | Type | Required | Description
 --- | --- | --- | ---
 GT | int | Yes | Greater Than - Weight (in kg) must be greater than this value - this will be the lower limit for the weight range of this user
 LT | int | Yes | Less Than - Weight (in kg) must be less than this value - this will be the upper limit for the weight range of this user

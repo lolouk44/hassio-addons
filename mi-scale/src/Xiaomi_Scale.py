@@ -38,7 +38,7 @@ def customUserDecoder(userDict):
 # Trying To Load Config From options.json (HA Add-On)
 try:
     with open('/data/options.json') as json_file:
-        sys.stdout.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Loading Config From Add-On Options...{os.getcwd()}\n")
+        sys.stdout.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Loading Config From Add-On Options...\n")
         data = json.load(json_file)
         try:
             MISCALE_MAC = data["MISCALE_MAC"]
