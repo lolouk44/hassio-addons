@@ -1,3 +1,10 @@
+## [0.1.11] - 2020-09-24
+### Breaking Changes
+- Allow any amount of users to be configured (removes limit of three)
+- Users need to be added as a list (see config example)
+- All users must now provide a GT and LT value
+- Try not to overlap ranges - if you do it will pick the first one that matches
+
 ## [0.1.10] - 2020-09-09
 ### Changed
 - Fixed issue with detection of boolean in MQTT_DISCOVERY (https://github.com/lolouk44/hassio-addons/issues/16 and https://github.com/lolouk44/xiaomi_mi_scale/issues/31)
