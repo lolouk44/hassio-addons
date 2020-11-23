@@ -29,8 +29,7 @@ jobs:
           docker buildx build --no-cache --push \
             --tag lolouk44/xiaomi-mi-scale-ha-add-on:${{ github.event.release.tag_name }} \
             --tag lolouk44/xiaomi-mi-scale-ha-add-on:latest \
-            --file ./mi-scale/Dockerfile \
-            --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8 .
+            --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8 ./mi-scale/
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
