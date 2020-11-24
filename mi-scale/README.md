@@ -14,16 +14,16 @@ Needs to be replaced with
 ## Supported Scales:
 Name | Model | Picture
 --- | --- | :---:
-[Mi Smart Scale 2](https://www.mi.com/global/scale) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | XMTZCO1HM, XMTZC04HM | ![Mi Scale_2](https://github.com/lolouk44/xiaomi_mi_scale/blob/master/Screenshots/Mi_Smart_Scale_2_Thumb.png)
-[Mi Body Composition Scale](https://www.mi.com/global/mi-body-composition-scale/) | XMTZC02HM | ![Mi Scale](https://github.com/lolouk44/xiaomi_mi_scale/blob/master/Screenshots/Mi_Body_Composition_Scale_Thumb.png)
-[Mi Body Composition Scale 2](https://c.mi.com/thread-2289389-1-0.html) | XMTZC05HM | ![Mi Body Composition Scale 2](https://github.com/lolouk44/xiaomi_mi_scale/blob/master/Screenshots/Mi_Body_Composition_Scale_2_Thumb.png)
+[Mi Smart Scale 2](https://www.mi.com/global/scale) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | XMTZCO1HM, XMTZC04HM | ![Mi Scale_2](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Smart_Scale_2_Thumb.png)
+[Mi Body Composition Scale](https://www.mi.com/global/mi-body-composition-scale/) | XMTZC02HM | ![Mi Scale](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Body_Composition_Scale_Thumb.png)
+[Mi Body Composition Scale 2](https://c.mi.com/thread-2289389-1-0.html) | XMTZC05HM | ![Mi Body Composition Scale 2](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Body_Composition_Scale_2_Thumb.png)
 
 
 ## Setup
 
 1. Retrieve the scale's MAC Address from the Xiaomi Mi Fit App:
 
-![MAC Address](https://github.com/lolouk44/xiaomi_mi_scale/blob/master/Screenshots/MAC_Address.png)
+![MAC Address](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/MAC_Address.png)
 
 2. Open Home Assistant and navigate to add-on store. Click on the 3 dots (top right) and select Repositories
 3. Enter `https://github.com/lolouk44/hassio-addons` in the box and click on Add
@@ -98,9 +98,9 @@ Under the `sensor` block, enter as many blocks as users configured in your envir
 
 ```
 
-![Mi Scale](https://github.com/lolouk44/xiaomi_mi_scale/blob/master/Screenshots/HA_Lovelace_Card.png)
+![Mi Scale](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/HA_Lovelace_Card.png)
 
-![Mi Scale](https://github.com/lolouk44/xiaomi_mi_scale/blob/master/Screenshots/HA_Lovelace_Card_Details.png)
+![Mi Scale](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/HA_Lovelace_Card_Details.png)
 
 ## Acknowledgements:
 Thanks to @syssi (https://gist.github.com/syssi/4108a54877406dc231d95514e538bde9) and @prototux (https://github.com/wiecosystem/Bluetooth) for their initial code

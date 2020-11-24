@@ -1,6 +1,11 @@
+## [0.1.14] - 2020-11-24
+### Changed
+- 2nd attempt to fix executable files (fixes https://github.com/lolouk44/hassio-addons/issues/23)
+- Fixed image links in README file
+
 ## [0.1.13] - 2020-11-24
 ### Changed
-- Fixed executable files (fixes https://github.com/lolouk44/hassio-addons/issues/23)
+- Fixed executable files ~~(fixes https://github.com/lolouk44/hassio-addons/issues/23)~~
 
 ## [0.1.12] - 2020-11-23
 ### Changed
