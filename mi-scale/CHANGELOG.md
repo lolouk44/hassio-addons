@@ -1,3 +1,7 @@
+## [0.1.13] - 2020-11-24
+### Changed
+- Fixed executable files (fixes https://github.com/lolouk44/hassio-addons/issues/23)
+
 ## [0.1.12] - 2020-11-23
 ### Changed
 - Fixed workflow for automatic docker images building
