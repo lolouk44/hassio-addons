@@ -3,7 +3,7 @@ LABEL io.hass.version="0.1.15" io.hass.type="addon" io.hass.arch="armhf|aarch64|
 WORKDIR /opt/miscale
 COPY src /opt/miscale
 
-RUN apt-get update && apt-get install no-install-recommends -y \
+RUN apt-get update && apt-get install -y \
     bluez \
     python-pip \
     libglib2.0-dev && \
