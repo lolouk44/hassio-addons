@@ -1,3 +1,7 @@
+## [0.1.15] - 2020-11-26
+### Changed
+- Fixed MQTT Discovery Message
+
 ## [0.1.14] - 2020-11-24
 ### Changed
 - 2nd attempt to fix executable files (fixes https://github.com/lolouk44/hassio-addons/issues/23)
