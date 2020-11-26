@@ -1,3 +1,7 @@
+## [0.1.16] - 2020-11-26
+### Changed
+- Fixed MQTT Discovery Message
+
 ## [0.1.15] - 2020-11-26
 ### Changed
 - Fixed MQTT Discovery Message
