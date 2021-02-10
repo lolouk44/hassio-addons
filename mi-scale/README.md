@@ -35,6 +35,7 @@ Name | Model | Picture
 Option | Type | Required | Description
 --- | --- | --- | ---
 HCI_DEV | string | No | Bluetooth hci device to use. Defaults to hci0
+RPI_BLUEPY_FIX | bool | No | Activates potential fix for Bluepy issues on RaspberryPi "scan(5, passive=true)"
 MISCALE_MAC | string | Yes | Mac address of your scale
 MQTT_PREFIX | string | No | MQTT Topic Prefix. Defaults to miscale
 MQTT_HOST | string | Yes | MQTT Server (defaults to 127.0.0.1)

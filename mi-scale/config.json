@@ -14,6 +14,7 @@
 
   "options": {
     "HCI_DEV": "hci0",
+    "RPI_BLUEPY_FIX": "false",
     "MISCALE_MAC": "00:00:00:00:00:00",
     "MQTT_PREFIX": "miscale",
     "MQTT_HOST": "192.168.0.1",
@@ -44,6 +45,7 @@
   },
   "schema": {
     "HCI_DEV": "str?",
+    "RPI_BLUEPY_FIX": "bool?",
     "MISCALE_MAC": "str",
     "MQTT_PREFIX": "str?",
     "MQTT_HOST": "str",

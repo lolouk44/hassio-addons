@@ -79,6 +79,11 @@ try:
             HCI_DEV = "hci0"[-1]
             pass
         try:
+            RPI_BLUEPY_FIX = data["RPI_BLUEPY_FIX"]
+        except:
+            RPI_BLUEPY_FIX = False
+            pass                     
+        try:
             USER1_GT = int(data["USER1_GT"])
         except:
             sys.stderr.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - USER1_GT not provided...\n")
@@ -317,7 +322,10 @@ def main():
     while True:
         try:
             scanner = btle.Scanner(HCI_DEV).withDelegate(ScanProcessor())
-            scanner.scan(5) # Adding passive=True to try and fix issues on RPi devices
+            if RPI_BLUEPY_FIX.lower() in ['true', '1', 'y', 'yes']:
+                scanner.scan(5, passive=True) #passive=True to try and fix issues for bluepy on RPi devices
+            else:
+                scanner.scan(5)
         except BTLEDisconnectError as error:
             sys.stderr.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - btle disconnected: {error}\n")
             pass
