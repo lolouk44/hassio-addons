@@ -2,19 +2,10 @@
 
 Add-On for [HomeAssistant](https://www.home-assistant.io/) to read weight measurements from Xiaomi Body Scales.
 
-## BREAKING CHANGE:
-Please note there was a breaking change in 0.1.8. The MQTT message json attributes are now in lower snake_case to be compliant with Home-Assistant Attributes.
-This means Home-Assistant sensor configuration needs to be adjusted.
-For example 
-`value_template: "{{ value_json['Weight'] }}"`
-Needs to be replaced with
-`value_template: "{{ value_json['weight'] }}"`
-(note the lowercase `w` in `weight`)
-
 ## Supported Scales:
 Name | Model | Picture
 --- | --- | :---:
-[Mi Smart Scale 2](https://www.mi.com/global/scale) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | XMTZCO1HM, XMTZC04HM | ![Mi Scale_2](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Smart_Scale_2_Thumb.png)
+[Mi Smart Scale 2](https://www.mi.com/global/scale) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | XMTZC04HM | ![Mi Scale_2](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Smart_Scale_2_Thumb.png)
 [Mi Body Composition Scale](https://www.mi.com/global/mi-body-composition-scale/) | XMTZC02HM | ![Mi Scale](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Body_Composition_Scale_Thumb.png)
 [Mi Body Composition Scale 2](https://c.mi.com/thread-2289389-1-0.html) | XMTZC05HM | ![Mi Body Composition Scale 2](https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Body_Composition_Scale_2_Thumb.png)
 
@@ -35,7 +26,7 @@ Name | Model | Picture
 Option | Type | Required | Description
 --- | --- | --- | ---
 HCI_DEV | string | No | Bluetooth hci device to use. Defaults to hci0
-RPI_BLUEPY_FIX | bool | No | Activates potential fix for Bluepy issues on RaspberryPi "scan(5, passive=true)"
+BLUEPY_PASSIVE_SCAN | bool | No | Activates potential fix for Bluepy issues on RaspberryPi "scan(5, passive=true)". Defaults to true
 MISCALE_MAC | string | Yes | Mac address of your scale
 MQTT_PREFIX | string | No | MQTT Topic Prefix. Defaults to miscale
 MQTT_HOST | string | Yes | MQTT Server (defaults to 127.0.0.1)
@@ -49,22 +40,21 @@ MQTT_DISCOVERY_PREFIX | string | No | MQTT Discovery Prefix for Home Assistant. 
 
 Auto-gender selection/config -- This is used to create the calculations such as BMI, Water/Bone Mass etc...
 Up to 3 users possible as long as weights do not overlap!
-
 Here is the logic used to assign a measured weight to a user:
 ```
-if [measured value in kg] is greater than USER1_GT, assign it to USER1
-else if [measured value in kg] is less than USER2_LT, assign it to USER2
-else assign it to USER3 (e.g. USER2_LT < [measured value in kg] < USER1_GT)
+if [measured value] is greater than USER1_GT, assign it to USER1
+else if [measured value] is less than USER2_LT, assign it to USER2
+else assign it to USER3 (e.g. USER2_LT < [measured value] < USER1_GT)
 ```
 
 Option | Type | Required | Description
 --- | --- | --- | ---
-USER1_GT | int | Yes | If the weight (in kg) is greater than this number, we'll assume that we're weighing User #1
+USER1_GT | int | Yes | If the weight is greater than this number, we'll assume that we're weighing User #1
 USER1_SEX | string | Yes | male / female
 USER1_NAME | string | Yes | Name of the user
 USER1_HEIGHT | int | Yes | Height (in cm) of the user
 USER1_DOB | string | Yes | DOB (in yyyy-mm-dd format)
-USER2_LT | int | No | If the weight (in kg) is less than this number, we'll assume that we're weighing User #2. Defaults to USER1_GT Value
+USER2_LT | int | No | If the weight is less than this number, we'll assume that we're weighing User #2. Defaults to USER1_GT Value
 USER2_SEX | string | No | male / female. Defaults to female
 USER2_NAME | string | No | Name of the user. Defaults to Serena
 USER2_HEIGHT | int | No |Height (in cm) of the user. Defaults to 95
@@ -80,6 +70,7 @@ USER3_DOB | string | No | DOB (in yyyy-mm-dd format). Defaults to 1990-01-01
 
 ## Home-Assistant Setup:
 Under the `sensor` block, enter as many blocks as users configured in your environment variables:
+(Note: only weight entities are automatically added via the MQTT Discovery)
 
 ```yaml
   - platform: mqtt
@@ -108,4 +99,4 @@ Thanks to @syssi (https://gist.github.com/syssi/4108a54877406dc231d95514e538bde9
 
 Special thanks to [@ned-kelly](https://github.com/ned-kelly) for his help turning a "simple" python script into a fully fledged docker container
 
-Thanks to [@bpaulin](https://github.com/bpaulin), [@AiiR42](https://github.com/AiiR42) for their PRs and collaboration
+Thanks to [@bpaulin](https://github.com/bpaulin), [@fabir-git](https://github.com/fabir-git)for their PRs and collaboration
