@@ -1,6 +1,6 @@
 {
   "name": "Xiaomi Mi Scale",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "slug": "xiaomi_mi_scale",
   "description": "Read weight measurements from Xiamomi scale via BLE",
   "url": "https://github.com/lolouk44/xiaomi_mi_scale_ha_add_on",

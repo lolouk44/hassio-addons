@@ -1,3 +1,7 @@
+## [0.1.18] - 2021-02-11
+### Changed
+- Restored correct code after accepting a PR based on older code in 0.1.17
+
 ## [0.1.17] - 2021-02-10
 ### Changed
 - Reduced docker image size
