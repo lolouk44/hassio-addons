@@ -26,7 +26,7 @@ Name | Model | Picture
 Option | Type | Required | Description
 --- | --- | --- | ---
 HCI_DEV | string | No | Bluetooth hci device to use. Defaults to hci0
-BLUEPY_PASSIVE_SCAN | bool | No | Activates potential fix for Bluepy issues on RaspberryPi "scan(5, passive=true)". Defaults to true
+BLUEPY_PASSIVE_SCAN | bool | No | Try to set to true if getting an error like `Bluetooth connection error: Failed to execute management command ‘le on’` on a Raspberry Pi. Defaults to false
 MISCALE_MAC | string | Yes | Mac address of your scale
 MQTT_PREFIX | string | No | MQTT Topic Prefix. Defaults to miscale
 MQTT_HOST | string | Yes | MQTT Server (defaults to 127.0.0.1)

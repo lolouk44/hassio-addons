@@ -1,6 +1,8 @@
 ## [0.1.17] - 2021-02-10
 ### Changed
 - Reduced docker image size
+- Added BLUEPY_PASSIVE_SCAN Option to help with some Raspberry Pi devices getting errors like `Bluetooth connection error: Failed to execute management command ‘le on’`
+- Fixed config.json startup deprecated option (fixes https://github.com/lolouk44/hassio-addons/issues/32)
 
 ## [0.1.16] - 2020-11-26
 ### Changed
