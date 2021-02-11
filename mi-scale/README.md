@@ -36,34 +36,23 @@ MQTT_PORT | int | No | Defaults to 1883
 TIME_INTERVAL | int | No | Time in sec between each query to the scale, to allow other applications to use the Bluetooth module. Defaults to 30
 MQTT_DISCOVERY | bool | No | MQTT Discovery for Home Assistant Defaults to true
 MQTT_DISCOVERY_PREFIX | string | No | MQTT Discovery Prefix for Home Assistant. Defaults to homeassistant
-
+USERS | List | Yes | List of users to add
 
 Auto-gender selection/config -- This is used to create the calculations such as BMI, Water/Bone Mass etc...
-Up to 3 users possible as long as weights do not overlap!
 Here is the logic used to assign a measured weight to a user:
 ```
-if [measured value] is greater than USER1_GT, assign it to USER1
-else if [measured value] is less than USER2_LT, assign it to USER2
-else assign it to USER3 (e.g. USER2_LT < [measured value] < USER1_GT)
+if [measured value in kg] is within the range of a user's defined values for GT and LT then it will match to that user.
+If the weight matches two separate user's ranges, it will just be assigned to the first user that matched (so don't overlap ranges!)
 ```
 
-Option | Type | Required | Description
+User Option | Type | Required | Description
 --- | --- | --- | ---
-USER1_GT | int | Yes | If the weight is greater than this number, we'll assume that we're weighing User #1
-USER1_SEX | string | Yes | male / female
-USER1_NAME | string | Yes | Name of the user
-USER1_HEIGHT | int | Yes | Height (in cm) of the user
-USER1_DOB | string | Yes | DOB (in yyyy-mm-dd format)
-USER2_LT | int | No | If the weight is less than this number, we'll assume that we're weighing User #2. Defaults to USER1_GT Value
-USER2_SEX | string | No | male / female. Defaults to female
-USER2_NAME | string | No | Name of the user. Defaults to Serena
-USER2_HEIGHT | int | No |Height (in cm) of the user. Defaults to 95
-USER2_DOB | string | No | DOB (in yyyy-mm-dd format). Defaults to 1990-01-01
-USER3_SEX | string | No | male / female. Defaults to female
-USER3_NAME | string | No | Name of the user. Defaults to Missy
-USER3_HEIGHT | int | No |Height (in cm) of the user. Defaults to 150
-USER3_DOB | string | No | DOB (in yyyy-mm-dd format). Defaults to 1990-01-01
-
+GT | int | Yes | Greater Than - Weight (in kg) must be greater than this value - this will be the lower limit for the weight range of this user
+LT | int | Yes | Less Than - Weight (in kg) must be less than this value - this will be the upper limit for the weight range of this user
+SEX | string | Yes | male / female
+NAME | string | Yes | Name of the user
+HEIGHT | int | Yes | Height (in cm) of the user
+DOB | string | Yes | DOB (in yyyy-mm-dd format)
 
 7. Start the add-on
 
