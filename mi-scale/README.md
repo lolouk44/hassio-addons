@@ -40,19 +40,19 @@ USERS | List | Yes | List of users to add
 
 Auto-gender selection/config -- This is used to create the calculations such as BMI, Water/Bone Mass etc...
 Here is the logic used to assign a measured weight to a user:
-```
-if [measured value in kg] is within the range of a user's defined values for GT and LT then it will match to that user.
-If the weight matches two separate user's ranges, it will just be assigned to the first user that matched (so don't overlap ranges!)
-```
+- If the weight is within the range of a user's defined values for GT and LT, then it will be assigned (published) to that user.
+- If the weight matches two separate user ranges, it will only be assigned to the first user that matched (so don't overlap ranges!)
 
 User Option | Type | Required | Description
 --- | --- | --- | ---
-GT | int | Yes | Greater Than - Weight (in kg) must be greater than this value - this will be the lower limit for the weight range of this user
-LT | int | Yes | Less Than - Weight (in kg) must be less than this value - this will be the upper limit for the weight range of this user
+GT | int | Yes | Greater Than - Weight must be greater than this value - this will be the lower limit for the weight range of this user
+LT | int | Yes | Less Than - Weight must be less than this value - this will be the upper limit for the weight range of this user
 SEX | string | Yes | male / female
 NAME | string | Yes | Name of the user
 HEIGHT | int | Yes | Height (in cm) of the user
 DOB | string | Yes | DOB (in yyyy-mm-dd format)
+
+Note: The weight definitions must be in the same unit as the scale (kg, Lbs, jin)
 
 7. Start the add-on
 
@@ -88,4 +88,4 @@ Thanks to @syssi (https://gist.github.com/syssi/4108a54877406dc231d95514e538bde9
 
 Special thanks to [@ned-kelly](https://github.com/ned-kelly) for his help turning a "simple" python script into a fully fledged docker container
 
-Thanks to [@bpaulin](https://github.com/bpaulin), [@fabir-git](https://github.com/fabir-git)for their PRs and collaboration
+Thanks to [@bpaulin](https://github.com/bpaulin), [@fabir-git](https://github.com/fabir-git), [@snozzley](https://github.com/snozzley) for their PRs and collaboration

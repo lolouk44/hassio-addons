@@ -1,3 +1,10 @@
+## [0.1.19] - 2021-02-11
+### Breaking Changes
+- Allow any amount of users to be configured (removes limit of three) (based on https://github.com/lolouk44/hassio-addons/pull/18)
+- Users need to be added as a list (see config example)
+- All users must now provide a GT and LT value
+- Try not to overlap ranges - if you do it will ony pick the first one that matches
+
 ## [0.1.18] - 2021-02-11
 ### Changed
 - Restored correct code after accepting a PR based on older code in 0.1.17

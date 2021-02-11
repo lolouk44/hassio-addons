@@ -27,34 +27,34 @@
 
     "USERS": [
         { 
+          "NAME": "Bob",
+          "SEX": "male",
           "GT": 60,
           "LT": 80,
-          "SEX": "male",
-          "NAME": "Bob",
           "HEIGHT": 180,
           "DOB": "1980-01-01"
         },
         { 
+          "NAME": "Mary",
+          "SEX": "female",
           "GT": 40,
           "LT": 60,
-          "SEX": "female",
-          "NAME": "Mary",
           "HEIGHT": 160,
           "DOB": "1990-01-01"
         },
         { 
+          "NAME": "Timmy",
+          "SEX": "male",
           "GT": 20,
           "LT": 40,
-          "SEX": "male",
-          "NAME": "Timmy",
           "HEIGHT": 120,
           "DOB": "2010-01-01"
         },
         { 
+          "NAME": "Baby Sally",
+          "SEX": "female",
           "GT": 1,
           "LT": 20,
-          "SEX": "female",
-          "NAME": "Baby Sally",
           "HEIGHT": 50,
           "DOB": "2020-01-01"
         }
@@ -76,10 +76,10 @@
 
     "USERS": [
       { 
+        "NAME": "str",
+        "SEX": "str",
         "GT": "int",
         "LT": "int",
-        "SEX": "str",
-        "NAME": "str",
         "HEIGHT": "int",
         "DOB": "str"
       }

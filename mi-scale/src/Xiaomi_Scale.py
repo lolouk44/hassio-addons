@@ -171,7 +171,6 @@ class ScanProcessor():
                     unit = ''
                     if measunit == "03": unit = 'lbs'
                     if measunit == "02": unit = 'kg' ; measured = measured / 2
-                    #mitdatetime = datetime.strptime(str(int((data[10:12] + data[8:10]), 16)) + " " + str(int((data[12:14]), 16)) +" "+ str(int((data[14:16]), 16)) +" "+ str(int((data[16:18]), 16)) +" "+ str(int((data[18:20]), 16)) +" "+ str(int((data[20:22]), 16)), "%Y %m %d %H %M %S")
                     miimpedance = str(int((data[24:26] + data[22:24]), 16))
                     if unit and isStabilized:
                         if OLD_MEASURE != round(measured, 2) + int(miimpedance):
@@ -188,11 +187,11 @@ class ScanProcessor():
             if(check_weight(user,calcweight)):
                 matcheduser = user
                 break
-        if matcheduser is None:        
-            return  
+        if matcheduser is None:
+            return
         height = matcheduser.HEIGHT
         age = self.GetAge(matcheduser.DOB)
-        sex = matcheduser.SEX
+        sex = matcheduser.SEX.lower()
         name = matcheduser.NAME
 
         lib = Xiaomi_Scale_Body_Metrics.bodyMetrics(calcweight, height, age, sex, 0)
@@ -222,7 +221,6 @@ class ScanProcessor():
             publish.single(
                 MQTT_PREFIX + '/' + name + '/weight',
                 message,
-                # qos=1, #Removed qos=1 as incorrect connection details will result in the client waiting for ack from broker
                 retain=True,
                 hostname=MQTT_HOST,
                 port=MQTT_PORT,
