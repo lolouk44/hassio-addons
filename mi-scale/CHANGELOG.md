@@ -1,4 +1,4 @@
-## [0.1.19] - 2021-02-11
+## [0.2.0] - 2021-02-11
 ### Breaking Changes
 - Allow any amount of users to be configured (removes limit of three) (based on https://github.com/lolouk44/hassio-addons/pull/18)
 - Users need to be added as a list (see config example)
