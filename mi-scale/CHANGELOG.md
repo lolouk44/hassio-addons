@@ -1,6 +1,7 @@
 ## [0.2.2] - 2021-05-10
 ### Fixed
 - Fixed user lookup by non kg weight (https://github.com/lolouk44/hassio-addons/issues/36)
+- Added pre-relase workflow
 
 ## [0.2.1] - 2021-05-10
 ### Changed
