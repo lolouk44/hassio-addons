@@ -24,7 +24,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build image
+      - name: Build Pre-Release image
+        if: "github.event.release.prerelease"
+        run: |
+          docker buildx build --no-cache --push \
+            --tag lolouk44/xiaomi-mi-scale-ha-add-on:${{ github.event.release.tag_name }} \
+            --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8 ./mi-scale/
+
+      - name: Build Release image
+        if: "!github.event.release.prerelease"
         run: |
           docker buildx build --no-cache --push \
             --tag lolouk44/xiaomi-mi-scale-ha-add-on:${{ github.event.release.tag_name }} \
