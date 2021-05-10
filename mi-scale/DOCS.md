@@ -79,4 +79,4 @@ Under the `sensor` block, enter as many blocks as users configured in your envir
 
 
 # Acknowledgements
-Thanks to @syssi (https://gist.github.com/syssi/4108a54877406dc231d95514e538bde9) and @prototux (https://github.com/wiecosystem/Bluetooth) for their initial code. Special thanks to [@ned-kelly](https://github.com/ned-kelly) for his help turning a "simple" Python script into a fully fledged Docker container. Thanks to [@bpaulin](https://github.com/bpaulin), [@fabir-git](https://github.com/fabir-git), [@snozzley](https://github.com/snozzley) for their PRs and collaboration.
+Thanks to @syssi (https://gist.github.com/syssi/4108a54877406dc231d95514e538bde9) and @prototux (https://github.com/wiecosystem/Bluetooth) for their initial code. Special thanks to [@ned-kelly](https://github.com/ned-kelly) for his help turning a "simple" Python script into a fully fledged Docker container. Thanks to [@bpaulin](https://github.com/bpaulin), [@fabir-git](https://github.com/fabir-git), [@snozzley](https://github.com/snozzley), [CodeFinder2](https://github.com/CodeFinder2) for their PRs and collaboration.
