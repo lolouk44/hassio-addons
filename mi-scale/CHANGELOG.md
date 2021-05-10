@@ -1,4 +1,8 @@
-## [0.2.1] - 2021-02-11
+## [0.2.2] - 2021-05-10
+### Fixed
+- Fixed user lookup by non kg weight (https://github.com/lolouk44/hassio-addons/issues/36)
+
+## [0.2.1] - 2021-05-10
 ### Changed
 - Split README.md into README.md and DOCS.md, revisit and improve content ([PR-37](https://github.com/lolouk44/hassio-addons/pull/37))
 
