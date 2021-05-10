@@ -1,6 +1,10 @@
+## [0.2.1] - 2021-02-11
+### Changed
+- Split README.md into README.md and DOCS.md, revisit and improve content ([PR-37](https://github.com/lolouk44/hassio-addons/pull/37))
+
 ## [0.2.0] - 2021-02-11
 ### Breaking Changes
-- Allow any amount of users to be configured (removes limit of three) (based on https://github.com/lolouk44/hassio-addons/pull/18)
+- Allow any amount of users to be configured (removes limit of three) (based on [PR-18](https://github.com/lolouk44/hassio-addons/pull/18))
 - Users need to be added as a list (see config example)
 - All users must now provide a GT and LT value
 - Try not to overlap ranges - if you do it will ony pick the first one that matches
