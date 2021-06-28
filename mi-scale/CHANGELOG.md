@@ -1,4 +1,4 @@
-## [0.2.5] - 2021-06-28
+## [0.2.6] - 2021-06-28
 ### Changed
 - Fixed handling of MQTT_PORT and TIME_INTERVAL
 
