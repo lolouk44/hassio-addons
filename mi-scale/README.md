@@ -1,3 +1,5 @@
+[![version](https://img.shields.io/github/v/release/lolouk44/hassio-addons)](https://github.com/lolouk44/hassio-addons/releases)
+[![ha_badge](https://img.shields.io/badge/Home%20Assistant-Add%20On-blue.svg)](https://www.home-assistant.io/)
 # Home Assistant Add-on: Xiaomi Mi Scale
 
 Reads weight measurements from Xiaomi Body Scales via Bluetooth.
