@@ -1,9 +1,9 @@
 {
-	"name": "Mi-Scale Integration",
+	"name": "Xiaomi Mi Scale",
 	"url": "https://github.com/lolouk44/hassio-addons",
 	"maintainer": "lolouk44",
 	"country": "NO",
 	"domains": [ "integration", "sensor" ],
 	"homeassistant": "0.99.9",
-	"render_readme":  true
+	"render_readme": true
 }
