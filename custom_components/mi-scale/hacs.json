@@ -1,0 +1,7 @@
+{
+  "name": "Lolouk44 Add-Ons",
+  "url": "https://github.com/lolouk44/hassio-addons",
+  "maintainer": "lolouk44"  "country": "NO",
+  "domains": ["integration", "sensor"],
+  "homeassistant": "0.99.9",
+}
