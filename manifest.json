@@ -1,0 +1,9 @@
+ {
+	"domain": "https://github.com/lolouk44",
+	"name": "Xiaomi Mi Scale",
+	"documentation": "https://github.com/lolouk44/hassio-addons",
+	"dependencies": [],
+	"codeowners": [ "lolouk44" ],
+	"requirements": [],
+	"iot_class": "local_polling"
+}
