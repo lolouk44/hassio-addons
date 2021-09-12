@@ -1,9 +1,9 @@
 # Supported Scales
 
 The following scales are supported by the Add-on:
-Name | Model | Picture
---- | --- | ---
-[Mi Smart Scale 2](https://www.mi.com/global/scale) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | XMTZC04HM | <img alt="Mi Scale_2" src="https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Smart_Scale_2_Thumb.png" width="150">
+|Name | Model | Picture|
+|--- | --- | ---|
+[Mi Smart Scale 2](https://www.mi.com/global/scale)| XMTZC04HM | <img alt="Mi Scale_2" src="https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Smart_Scale_2_Thumb.png" width="150">
 [Mi Body Composition Scale](https://www.mi.com/global/mi-body-composition-scale/) | XMTZC02HM | <img alt="Mi Scale" src="https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Body_Composition_Scale_Thumb.png" width="150">
 [Mi Body Composition Scale 2](https://c.mi.com/thread-2289389-1-0.html) | XMTZC05HM | <img alt="Mi Body Composition Scale 2" src="https://raw.githubusercontent.com/lolouk44/xiaomi_mi_scale/master/Screenshots/Mi_Body_Composition_Scale_2_Thumb.png" width="150">
 
