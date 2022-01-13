@@ -121,11 +121,14 @@ except FileNotFoundError:
 
 OLD_MEASURE = ''
 
-def discovery():
+def discovery(): 
     for MQTTUser in (USERS):
         message = '{"name": "' + MQTTUser.NAME + ' Weight",'
-        message+= '"state_topic": "' + MQTT_PREFIX + '/' + MQTTUser.NAME + '/weight","value_template": "{{ value_json.weight }}",'
-        message+= '"json_attributes_topic": "' + MQTT_PREFIX + '/' + MQTTUser.NAME + '/weight","icon": "mdi:scale-bathroom"}'
+        message+= '"state_topic": "' + MQTT_PREFIX + '/' + MQTTUser.NAME + '/weight",'
+        message+= '"value_template": "{{ value_json.weight }}",'
+        message+= '"json_attributes_topic": "' + MQTT_PREFIX + '/' + MQTTUser.NAME + '/weight",'
+        message+= '"icon": "mdi:scale-bathroom",'
+        message+= '"state_class": "measurement"}'
         publish.single(
                         MQTT_DISCOVERY_PREFIX + '/sensor/' + MQTT_PREFIX + '/' + MQTTUser.NAME + '/config',
                         message,
@@ -219,6 +222,7 @@ class ScanProcessor():
             message += ',"protein":' + "{:.2f}".format(lib.getProteinPercentage())
             message += ',"body_type":"' + str(bodyscale[lib.getBodyType()]) + '"'
             message += ',"metabolic_age":' + "{:.0f}".format(lib.getMetabolicAge())
+            message += ',"impedance":' + "{:.0f}".format(int(miimpedance))
 
         message += ',"timestamp":"' + mitdatetime + '"'
         message += '}'
