@@ -1,5 +1,5 @@
-FROM python:3.8-slim
-LABEL io.hass.version="0.2.8" io.hass.type="addon" io.hass.arch="armhf|aarch64|i386|amd64"
+FROM python:3.9-slim
+LABEL io.hass.version="0.3.0" io.hass.type="addon" io.hass.arch="armhf|aarch64|i386|amd64"
 WORKDIR /opt/miscale
 COPY src /opt/miscale
 
