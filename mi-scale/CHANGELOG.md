@@ -1,3 +1,7 @@
+## [0.3.1] - 2022-10-02
+### Changed
+- Fixed MQTT Config. ([fixes #55](https://github.com/lolouk44/xiaomi_mi_scale/issues/55))
+
 ## [0.3.0] - 2022-10-02
 ### Changed
 - Stopped using deprecated/no longer supported bluepy library and replaced with bleak, requiring major code overhaul. ([fixes #59](https://github.com/lolouk44/hassio-addons/issues/59))
