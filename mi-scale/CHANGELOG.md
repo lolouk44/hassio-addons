@@ -1,3 +1,7 @@
+## [0.3.3] - 2022-10-03
+### Changed
+- Restoring handling of V1 scales. ([fixes #64](https://github.com/lolouk44/hassio-addons/issues/64))
+
 ## [0.3.2] - 2022-10-03
 ### Changed
 - Fixed missing dbus option. ([fixes #63](https://github.com/lolouk44/hassio-addons/issues/63))

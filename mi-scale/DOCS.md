@@ -19,6 +19,15 @@ Name | Model | Picture
 5. Under the "Configuration" tab, change the settings appropriately (at least MQTT parameters, user properties, and MAC address), see [Parameters](#parameters).
 6. Start the Add-on.
 
+## Important:
+If using the Add-On outside of Home Assistant Operating System / through a docker container, make sure the dbus is shared with the container running Home Assistant. This is typically done by adding the following line in your docker run command:
+`-v /var/run/dbus/:/var/run/dbus/:ro`
+or the following lines in your docker-compose file:
+```
+    volumes:
+      - /var/run/dbus/:/var/run/dbus/:ro
+```
+
 ## Parameters
 Option | Type | Required | Description
 --- | --- | --- | ---
