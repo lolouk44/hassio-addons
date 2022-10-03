@@ -1,6 +1,6 @@
 {
   "name": "Xiaomi Mi Scale",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "slug": "xiaomi_mi_scale",
   "description": "Read weight measurements from a Xiaomi bathroom scale via Bluetooth (BLE)",
   "url": "https://github.com/lolouk44/xiaomi_mi_scale_ha_add_on",
@@ -8,6 +8,7 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
   "boot": "auto",
+  "host_dbus": true,
   "panel_admin": false,
   "host_network": true,
   "privileged": ["NET_ADMIN", "SYS_ADMIN"],
