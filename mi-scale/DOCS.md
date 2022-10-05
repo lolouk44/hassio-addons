@@ -34,7 +34,6 @@ Option | Type | Required | Description
 HCI_DEV | string | No | Bluetooth hci device to use. Defaults to `hci0`
 BLUEPY_PASSIVE_SCAN | bool | No | Try to set to true if getting an error like `Bluetooth connection error: Failed to execute management command ‘le on’` on a Raspberry Pi. Defaults to `false`
 MISCALE_MAC | string | Yes | MAC address of your scale
-MISCALE_VERSION | int | No | `1` or `2` depending on the version of your scale, defaults to `2`
 MQTT_PREFIX | string | No | MQTT topic prefix, defaults to `miscale`
 MQTT_HOST | string | Yes | MQTT server, defaults to `127.0.0.1`
 MQTT_USERNAME | string | No | Username for MQTT server (comment out if not required)
