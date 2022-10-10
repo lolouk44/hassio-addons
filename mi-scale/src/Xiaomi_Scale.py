@@ -16,7 +16,7 @@ import os
 import Xiaomi_Scale_Body_Metrics
 
 DEFAULT_DEBUG_LEVEL = "INFO"
-VERSION = "0.3.5"
+VERSION = "0.3.6"
 
 
 
@@ -351,7 +351,7 @@ if __name__ == "__main__":
     if MQTT_DISCOVERY:
         MQTT_discovery()
     logging.info(f"-------------------------------------")
-    logging.info(f"Initialization Completed, Waiting for Scale...")
+    logging.info(f"Initialization completed, step on scale to wake it up and get a weight value sent... Make sure the scale is within reach...")
     try:
         asyncio.run(main(MISCALE_MAC.lower()))
     except Exception as error:

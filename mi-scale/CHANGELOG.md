@@ -1,3 +1,7 @@
+## [0.3.6] - 2022-10-10
+### Added
+- Added apparmor Security to support Supervised Installation. (Fixes [67](https://github.com/lolouk44/hassio-addons/issues/67) - Thanks @MariusHerget)
+
 ## [0.3.5] - 2022-10-10
 ### Added
 - Added extra logging. Logging Level can be set from config file.
