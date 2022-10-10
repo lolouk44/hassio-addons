@@ -1,6 +1,6 @@
 {
   "name": "Xiaomi Mi Scale",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "slug": "xiaomi_mi_scale",
   "description": "Read weight measurements from a Xiaomi bathroom scale via Bluetooth (BLE)",
   "url": "https://github.com/lolouk44/xiaomi_mi_scale_ha_add_on",
@@ -22,12 +22,12 @@
     "MQTT_USERNAME": "user",
     "MQTT_PASSWORD": "passwd",
     "MQTT_PORT": 1883,
-	"MQTT_RETAIN": true,
+    "MQTT_RETAIN": true,
     "MQTT_DISCOVERY": true,
     "MQTT_DISCOVERY_PREFIX": "homeassistant",
-	"MQTT_TLS_CACERTS": "Path to CA Cert File",
-	"MQTT_TLS_INSECURE": false,
-    "TIME_INTERVAL": 30,
+    "MQTT_TLS_CACERTS": "Path to CA Cert File",
+    "MQTT_TLS_INSECURE": false,
+    "DEBUG_LEVEL": "error",
 
     "USERS": [
         { 
@@ -77,9 +77,9 @@
     "MQTT_RETAIN": "bool?",
     "MQTT_DISCOVERY": "bool?",
     "MQTT_DISCOVERY_PREFIX": "str?",
-	"MQTT_TLS_CACERTS": "str?",
-	"MQTT_TLS_INSECURE": "bool?",
-    "TIME_INTERVAL": "int?",
+    "MQTT_TLS_CACERTS": "str?",
+    "MQTT_TLS_INSECURE": "bool?",
+    "DEBUG_LEVEL": "str?",
 
     "USERS": [
       { 

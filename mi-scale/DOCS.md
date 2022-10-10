@@ -39,9 +39,9 @@ MQTT_HOST | string | Yes | MQTT server, defaults to `127.0.0.1`
 MQTT_USERNAME | string | No | Username for MQTT server (comment out if not required)
 MQTT_PASSWORD | string | No | Password for MQTT (comment out if not required)
 MQTT_PORT | int | No | Port of your MQTT server, defaults to 1883
-TIME_INTERVAL | int | No | Time in seconds between each query to the scale, to allow other applications to use the Bluetooth module, defaults to 30
 MQTT_DISCOVERY | bool | No | Whether you want MQTT discovery for Home Assistant, defaults to `true`
 MQTT_DISCOVERY_PREFIX | string | No | MQTT discovery prefix for Home Assistant, defaults to `homeassistant`
+DEBUG_LEVEL | string | No | Logging level. Possible values: 'CRITICAL', 'ERROR', 'WARNING', 'INFO', 'DEBUG'. Defaults to 'INFO'
 USERS | List | Yes | List of users to add, see below
 
 

@@ -1,3 +1,10 @@
+## [0.3.5] - 2022-10-10
+### Added
+- Added extra logging. Logging Level can be set from config file.
+- Deprecated options MISCALE_VERSION, TIME_INTERVAL.
+### Changed
+- Restored HCI settings handling
+
 ## [0.3.4] - 2022-10-05
 ### Changed
 - Restored MQTT Discovery. ([fixes #65](https://github.com/lolouk44/hassio-addons/issues/65))
