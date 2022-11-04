@@ -30,5 +30,8 @@ If applicable, add screenshots to help explain your problem.
  - Device used to run the Script/Container [e.g. Raspberry Pi, NUC]
  - Bluetooth device used [e.g. Built-in, USB Dongle]
 
+**Home Assistant Version:**
+e.g. 2010.01.1
+
 **Additional context**
 Add any other context about the problem here.
